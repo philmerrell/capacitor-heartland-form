@@ -63,7 +63,7 @@ public class HeartlandForm: CAPPlugin {
     }
 
     @objc func open(_ call: CAPPluginCall) {
-        let publicKey = call.getString("heartlandPublicKey") as? String else {
+        guard publicKey = call.getString("heartlandPublicKey") as? String else {
             call.error("You must pass a Heartland public key")
             self.bridge.modulePrint(self, "A Heartland public key was not passed")
             return
