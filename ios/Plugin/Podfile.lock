@@ -1,0 +1,42 @@
+PODS:
+  - Capacitor (0.0.113):
+    - CapacitorCordova (= 0.0.113)
+    - GCDWebServer (~> 3.0)
+  - CapacitorCordova (0.0.113)
+  - CreditCardForm (0.1.8)
+  - GCDWebServer (3.4.2):
+    - GCDWebServer/Core (= 3.4.2)
+  - GCDWebServer/Core (3.4.2)
+  - Heartland-iOS-SDK (1.1.5):
+    - XMLDictionary
+  - Stripe (14.0.0)
+  - XMLDictionary (1.4.1)
+
+DEPENDENCIES:
+  - Capacitor
+  - CreditCardForm
+  - Heartland-iOS-SDK
+  - Stripe
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Capacitor
+    - CapacitorCordova
+    - CreditCardForm
+    - GCDWebServer
+    - Heartland-iOS-SDK
+    - Stripe
+    - XMLDictionary
+
+SPEC CHECKSUMS:
+  Capacitor: b37060b0b2685257bedbc69e49a54a74ef30fb9a
+  CapacitorCordova: a923a32bc7ad5f1f3d69664ca86ff69580343ed3
+  CreditCardForm: 7e67bc394545eda9e502652af0858552b4931728
+  GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
+  Heartland-iOS-SDK: 257b442d999217adb5e7697ee67c45fcf1502904
+  Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
+  XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
+
+PODFILE CHECKSUM: dd9cb440da6beba15373aea0af4fa7292dcec7e6
+
+COCOAPODS: 1.5.3
