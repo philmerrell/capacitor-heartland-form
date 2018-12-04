@@ -10,4 +10,7 @@
     s.source_files = 'ios/Plugin/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
     s.ios.deployment_target  = '11.0'
     s.dependency 'Capacitor'
+    s.dependency 'CreditCardForm'
+    s.dependency 'Stripe'
+    s.dependency 'Heartland-iOS-SDK'
   end
