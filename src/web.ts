@@ -13,6 +13,11 @@ export class HeartlandFormWeb extends WebPlugin implements HeartlandFormPlugin {
     console.log('ECHO', options);
     return Promise.resolve({ value: options.value });
   }
+
+  async open(options: { heartlandPublicKey: string}): Promise<{heartlandPublicKey: string}> {
+    return Promise.resolve({ heartlandPublicKey: options.heartlandPublicKey})
+  }
+
 }
 
 const HeartlandForm = new HeartlandFormWeb();
