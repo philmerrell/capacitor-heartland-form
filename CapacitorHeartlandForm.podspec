@@ -1,6 +1,6 @@
 
   Pod::Spec.new do |s|
-    s.name = 'HeartlandForm'
+    s.name = 'CapacitorHeartlandForm'
     s.version = '0.0.1'
     s.summary = 'Native view for accepting payment through Heartland SDK'
     s.license = 'MIT'
