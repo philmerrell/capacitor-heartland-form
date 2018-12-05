@@ -42,6 +42,10 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
 //        ])
     }
     
+    @IBAction func closeView(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
         creditCardForm.paymentCardTextFieldDidChange(cardNumber: textField.cardNumber, expirationYear: textField.expirationYear, expirationMonth: textField.expirationMonth, cvc: textField.cvc)
     }
