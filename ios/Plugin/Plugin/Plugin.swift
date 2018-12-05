@@ -34,8 +34,11 @@ public class HeartlandForm: CAPPlugin {
         // let publicKey = call.getString("heartlandPublicKey")
         // if publicKey != nil {
         //     tokenService = HpsTokenService(publicKey: publicKey)
-            let storyboard = UIStoryboard(name: "UIHeartlandForm", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "HeartlandViewController")
+        let podBundle = Bundle(for: HeartlandForm.self)
+        let bundleUrl = podBundle.url(forResource: "CapacitorHeartlandForm", withExtension: "bundle")
+        let bundle = Bundle(url: bundleUrl!)!
+        let storyboard = UIStoryboard(name: "UIHeartlandForm", bundle: bundle)
+        let controller = storyboard.instantiateInitialViewController()!
             DispatchQueue.main.async {
                 self.bridge.viewController.present(controller, animated: true, completion: nil)
             }
