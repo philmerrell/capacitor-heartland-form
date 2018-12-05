@@ -13,7 +13,7 @@
         <!--Heartland View Controller-->
         <scene sceneID="URY-Io-47v">
             <objects>
-                <viewController storyboardIdentifier="UIHeartlandForm" id="Wa0-M8-VOa" customClass="HeartlandViewController" customModule="Plugin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeartlandViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wa0-M8-VOa" customClass="HeartlandViewController" customModule="Plugin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-HP-zRJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
