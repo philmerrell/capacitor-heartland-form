@@ -27,26 +27,23 @@ public class HeartlandForm: CAPPlugin {
 
     
     @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.success([
-            "value": value
-        ])
+        
     }
 
     @objc func open(_ call: CAPPluginCall) {
-        let publicKey = call.getString("heartlandPublicKey")
-        if publicKey != nil {
-            tokenService = HpsTokenService(publicKey: publicKey)
+        // let publicKey = call.getString("heartlandPublicKey")
+        // if publicKey != nil {
+        //     tokenService = HpsTokenService(publicKey: publicKey)
             let storyboard = UIStoryboard(name: "UIHeartlandForm", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "HeartlandViewController")
             DispatchQueue.main.async {
                 self.bridge.viewController.present(controller, animated: true, completion: nil)
             }
-        } else {
-            call.error("You must pass a Heartland public key")
-            self.bridge.modulePrint(self, "A Heartland public key was not passed")
-            return
-        }
+        // } else {
+        //     call.error("You must pass a Heartland public key")
+        //     self.bridge.modulePrint(self, "A Heartland public key was not passed")
+        //     return
+        // }
     }
     
 }
