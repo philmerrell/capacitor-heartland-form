@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="31" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Checkout" id="Hoj-eY-4HB">
+                                    <navigationItem title="Payment Info" id="Hoj-eY-4HB">
                                         <barButtonItem key="rightBarButtonItem" title="Close" id="Faj-EL-UMo">
                                             <connections>
                                                 <action selector="closeView:" destination="Wa0-M8-VOa" id="wjW-5p-gT1"/>
