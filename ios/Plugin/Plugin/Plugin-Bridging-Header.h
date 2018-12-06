@@ -9,5 +9,6 @@
 #ifndef Plugin_Bridging_Header_h
 #define Plugin_Bridging_Header_h
 
+#import <Stripe/Stripe.h>
 
 #endif /* Plugin_Bridging_Header_h */

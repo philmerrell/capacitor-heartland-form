@@ -32,6 +32,7 @@
 /* Begin PBXFileReference section */
 		07FF166B21B77FB400D7F0DC /* UIHeartlandForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIHeartlandForm.storyboard; sourceTree = "<group>"; };
 		07FF166F21B780DA00D7F0DC /* HeartlandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartlandViewController.swift; sourceTree = "<group>"; };
+		07FF167421B983CA00D7F0DC /* Plugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Plugin-Bridging-Header.h"; sourceTree = "<group>"; };
 		3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF88201F53D600D50D53 /* Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF8B201F53D600D50D53 /* Plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plugin.h; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 				50ADFF8C201F53D600D50D53 /* Info.plist */,
 				07FF166B21B77FB400D7F0DC /* UIHeartlandForm.storyboard */,
 				07FF166F21B780DA00D7F0DC /* HeartlandViewController.swift */,
+				07FF167421B983CA00D7F0DC /* Plugin-Bridging-Header.h */,
 			);
 			path = Plugin;
 			sourceTree = "<group>";
@@ -475,6 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.getcapacitor.Plugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Plugin/Plugin-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,6 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.getcapacitor.Plugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Plugin/Plugin-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
