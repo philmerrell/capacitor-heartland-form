@@ -7,12 +7,12 @@
 //
 
 import Stripe
-import CreditCardForm
 import UIKit
 
 class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate {
 
-    @IBOutlet weak var creditCardForm: CreditCardFormView!
+    @IBOutlet weak var creditCardForm: UIView!
+    @IBOutlet weak var payButton: UIButton!
     
     let paymentTextField = DispatchQueue.main.sync {
         return STPPaymentCardTextField()
@@ -21,32 +21,18 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         createTextField()
+        payButton.enabled = false
+
     }
     
     func createTextField() {
-        DispatchQueue.main.async {
-            paymentTextField.frame = CGRect(x: 15, y: 199, width: self.view.frame.size.width - 30, height: 44)
-            paymentTextField.delegate = self
-            paymentTextField.translatesAutoresizingMaskIntoConstraints = false
-            paymentTextField.borderWidth = 0
-            
-            let border = CALayer()
-            let width = CGFloat(1.0)
-            border.borderColor = UIColor.darkGray.cgColor
-            border.frame = CGRect(x: 0, y: paymentTextField.frame.size.height - width, width:  paymentTextField.frame.size.width, height: paymentTextField.frame.size.height)
-            border.borderWidth = width
-            paymentTextField.layer.addSublayer(border)
-            paymentTextField.layer.masksToBounds = true
-            
-            view.addSubview(paymentTextField)
-            
-            NSLayoutConstraint.activate([
-                paymentTextField.topAnchor.constraint(equalTo: creditCardForm.bottomAnchor, constant: 20),
-                paymentTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                paymentTextField.widthAnchor.constraint(equalToConstant: self.view.frame.size.width-20),
-                paymentTextField.heightAnchor.constraint(equalToConstant: 44)
-                ])
-        }
+        let frame1 = CGRect(x: 20, y: 150, width: self.view.frame.size.width - 40, height: 40)
+        paymentTextField = STPPaymentCardTextField(frame: frame1)
+        paymentTextField.center = view.center
+        paymentTextField.postalCodeEntryEnabled = true;
+        paymentTextField.delegate = self
+        view.addSubview(paymentTextField)
+
     }
     
 
@@ -56,20 +42,15 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
         }
     }
     
-    func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
-        creditCardForm.paymentCardTextFieldDidChange(cardNumber: textField.cardNumber, expirationYear: textField.expirationYear, expirationMonth: textField.expirationMonth, cvc: textField.cvc)
+    @IBAction func payButtonTapped(_ sender: UIButton) {
+        let card = paymentTextField.cardParams
+        print(card);
     }
     
-    func paymentCardTextFieldDidEndEditingExpiration(_ textField: STPPaymentCardTextField) {
-        creditCardForm.paymentCardTextFieldDidEndEditingExpiration(expirationYear: textField.expirationYear)
-    }
-    
-    func paymentCardTextFieldDidBeginEditingCVC(_ textField: STPPaymentCardTextField) {
-        creditCardForm.paymentCardTextFieldDidBeginEditingCVC()
-    }
-    
-    func paymentCardTextFieldDidEndEditingCVC(_ textField: STPPaymentCardTextField) {
-        creditCardForm.paymentCardTextFieldDidEndEditingCVC()
+    func paymentCardTextFieldDidChange(textField: STPPaymentCardTextField) {
+        if textField.valid{
+            payButton.enabled = true
+        }
     }
     
     

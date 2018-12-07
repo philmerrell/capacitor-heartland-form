@@ -36,12 +36,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaz-F8-mlA">
+                                <rect key="frame" x="37" y="319" width="300" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.2627450980392157" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Pay"/>
+                                <connections>
+                                    <action selector="payButtonTapped:" destination="Wa0-M8-VOa" eventType="touchUpInside" id="iFA-Q7-lwY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DXm-P2-9Zx"/>
                     </view>
                     <connections>
                         <outlet property="creditCardForm" destination="UKw-ZT-efK" id="rg8-g1-ADA"/>
+                        <outlet property="payButton" destination="zaz-F8-mlA" id="Rim-eK-sji"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2X-Ws-deX" userLabel="First Responder" sceneMemberID="firstResponder"/>
