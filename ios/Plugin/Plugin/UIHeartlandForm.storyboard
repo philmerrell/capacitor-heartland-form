@@ -25,7 +25,7 @@
                                     <navigationItem title="Payment Info" id="Hoj-eY-4HB">
                                         <barButtonItem key="rightBarButtonItem" title="Close" id="Faj-EL-UMo">
                                             <connections>
-                                                <action selector="closeView:" destination="Wa0-M8-VOa" id="wjW-5p-gT1"/>
+                                                <action selector="closePaymentView:" destination="Wa0-M8-VOa" id="1hy-yy-saQ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
