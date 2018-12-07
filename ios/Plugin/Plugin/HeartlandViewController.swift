@@ -11,35 +11,40 @@ import CreditCardForm
 import UIKit
 
 class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate {
+
     @IBOutlet weak var creditCardForm: CreditCardFormView!
     
-//    let paymentTextField = STPPaymentCardTextField()
+    let paymentTextField = DispatchQueue.main.sync {
+        return STPPaymentCardTextField()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Set up stripe textfield
-//        paymentTextField.delegate = self
-//        paymentTextField.frame = CGRect(x: 15, y: 199, width: self.view.frame.size.width - 30, height: 44)
-//        paymentTextField.translatesAutoresizingMaskIntoConstraints = false
-//        paymentTextField.borderWidth = 0
-//
-//        let border = CALayer()
-//        let width = CGFloat(1.0)
-//        border.borderColor = UIColor.darkGray.cgColor
-//        border.frame = CGRect(x: 0, y: paymentTextField.frame.size.height - width, width:  paymentTextField.frame.size.width, height: paymentTextField.frame.size.height)
-//        border.borderWidth = width
-//        paymentTextField.layer.addSublayer(border)
-//        paymentTextField.layer.masksToBounds = true
-//
-//        view.addSubview(paymentTextField)
-//
-//        NSLayoutConstraint.activate([
-//            paymentTextField.topAnchor.constraint(equalTo: creditCardForm.bottomAnchor, constant: 20),
-//            paymentTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            paymentTextField.widthAnchor.constraint(equalToConstant: self.view.frame.size.width-20),
-//            paymentTextField.heightAnchor.constraint(equalToConstant: 44)
-//        ])
+        createTextField()
+    }
+    
+    func createTextField() {
+        paymentTextField.frame = CGRect(x: 15, y: 199, width: self.view.frame.size.width - 30, height: 44)
+        paymentTextField.delegate = self
+        paymentTextField.translatesAutoresizingMaskIntoConstraints = false
+        paymentTextField.borderWidth = 0
+        
+        let border = CALayer()
+        let width = CGFloat(1.0)
+        border.borderColor = UIColor.darkGray.cgColor
+        border.frame = CGRect(x: 0, y: paymentTextField.frame.size.height - width, width:  paymentTextField.frame.size.width, height: paymentTextField.frame.size.height)
+        border.borderWidth = width
+        paymentTextField.layer.addSublayer(border)
+        paymentTextField.layer.masksToBounds = true
+        
+        view.addSubview(paymentTextField)
+        
+        NSLayoutConstraint.activate([
+            paymentTextField.topAnchor.constraint(equalTo: creditCardView.bottomAnchor, constant: 20),
+            paymentTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            paymentTextField.widthAnchor.constraint(equalToConstant: self.view.frame.size.width-20),
+            paymentTextField.heightAnchor.constraint(equalToConstant: 44)
+            ])
     }
     
     @IBAction func closeView(_ sender: UIBarButtonItem) {
