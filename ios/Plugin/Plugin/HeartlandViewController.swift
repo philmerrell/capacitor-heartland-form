@@ -11,17 +11,16 @@ import UIKit
 
 class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate {
 
-    @IBOutlet weak var creditCardForm: UIView!
     @IBOutlet weak var payButton: UIButton!
     
-    let paymentTextField = DispatchQueue.main.sync {
+    var paymentTextField = DispatchQueue.main.sync {
         return STPPaymentCardTextField()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createTextField()
-        payButton.enabled = false
+        payButton.isEnabled = false
 
     }
     
@@ -43,13 +42,9 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
     }
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        let card = paymentTextField.cardParams
-        print(card);
-    }
-    
-    func paymentCardTextFieldDidChange(textField: STPPaymentCardTextField) {
-        if textField.valid{
-            payButton.enabled = true
+        print("did change")
+        if textField.isValid {
+            payButton.isEnabled = true
         }
     }
     
