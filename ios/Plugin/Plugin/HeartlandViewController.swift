@@ -34,6 +34,13 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
 
     }
     
+    func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
+        print("did change")
+        if paymentTextField.isValid {
+            payButton.isEnabled = true
+        }
+    }
+    
 
     @IBAction func closePaymentView(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
@@ -42,10 +49,8 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
     }
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        print("did change")
-        if textField.isValid {
-            payButton.isEnabled = true
-        }
+        let card = paymentTextField.cardParams
+        print(card)
     }
     
     
