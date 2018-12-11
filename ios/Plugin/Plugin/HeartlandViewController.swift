@@ -8,11 +8,14 @@
 
 import Stripe
 import UIKit
+import Heartland_iOS_SDK
 
 class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate {
 
     @IBOutlet weak var payButton: UIButton!
     
+    var publicKey: String!
+    var delegate: PaymentTokenDelegate?
     var paymentTextField = DispatchQueue.main.sync {
         return STPPaymentCardTextField()
     }
@@ -21,7 +24,6 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
         super.viewDidLoad()
         createTextField()
         payButton.isEnabled = false
-
     }
     
     func createTextField() {
@@ -34,8 +36,24 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
 
     }
     
+    func getHeartlandToken(card: STPCardParams) {
+        let tokenService: HpsTokenService = HpsTokenService(publicKey:heartlandPublicKey);
+        tokenService.getTokenWithCardNumber(
+            card.number,
+            cvc: card.cvc,
+            expMonth: "20" + String(card.expMonth),
+            expYear: String(card.expYear)
+        )
+        { (tokenData) in
+            // use token
+            debugPrint(tokenData?.message)
+            // Check if we have a token
+            // Create a token success object...
+//            delegate?.paymentTokenSuccess()
+        }
+    }
+    
     func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
-        print("did change")
         if paymentTextField.isValid {
             payButton.isEnabled = true
         }
@@ -50,7 +68,7 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
         let card = paymentTextField.cardParams
-        print(card)
+        getHeartlandToken(card)
     }
     
     

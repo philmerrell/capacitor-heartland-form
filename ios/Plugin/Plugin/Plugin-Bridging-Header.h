@@ -10,5 +10,6 @@
 #define Plugin_Bridging_Header_h
 
 #import <Stripe/Stripe.h>
+#import <Heartland_iOS_SDK/hps.h>
 
 #endif /* Plugin_Bridging_Header_h */
