@@ -22,6 +22,7 @@ public class HeartlandForm: CAPPlugin, PaymentTokenDelegate {
     var call: CAPPluginCall!
 
     @objc func open(_ call: CAPPluginCall) {
+        self.call = call;
         let publicKey = call.getString("heartlandPublicKey")
         if publicKey != nil {
             displayHeartlandViewController(publicKey!)
@@ -48,7 +49,7 @@ public class HeartlandForm: CAPPlugin, PaymentTokenDelegate {
     }
     
     func paymentTokenSuccess(_ result: TokenSuccess) {
-        call.resolve([
+        self.call.resolve([
             "token"     : result.token,
             "expMonth"  : result.expMonth,
             "expYear"   : result.expYear,
