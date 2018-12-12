@@ -13,6 +13,7 @@ import Heartland_iOS_SDK
 class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate {
 
     @IBOutlet weak var payButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var publicKey: String!
     var delegate: PaymentTokenDelegate?
@@ -36,20 +37,34 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
 
     }
     
+    func createTokenSuccessResult(_ tokenData: HpsTokenData, _ card: STPCardParams) -> TokenSuccess {
+        let result = TokenSuccess(
+            token: tokenData.tokenValue,
+            expMonth: String(card.expMonth),
+            expYear: "20" + String(card.expYear),
+            postalCode: card.address.postalCode!
+        )
+        return result
+    }
+    
     func getHeartlandToken(card: STPCardParams) {
-        let tokenService: HpsTokenService = HpsTokenService(publicKey:heartlandPublicKey);
+        let tokenService: HpsTokenService = HpsTokenService(publicKey: publicKey);
         tokenService.getTokenWithCardNumber(
             card.number,
             cvc: card.cvc,
-            expMonth: "20" + String(card.expMonth),
-            expYear: String(card.expYear)
-        )
+            expMonth: String(card.expMonth),
+            expYear: "20" + String(card.expYear)
+            )
         { (tokenData) in
-            // use token
-            debugPrint(tokenData?.message)
-            // Check if we have a token
-            // Create a token success object...
-//            delegate?.paymentTokenSuccess()
+            if tokenData?.message != nil {
+                // Display error message on view
+                messageLabel.text = tokenData.message
+                
+            } else {
+                // We have a token
+                let result = self.createTokenSuccessResult(tokenData!, card)
+                self.delegate?.paymentTokenSuccess(result)
+            }
         }
     }
     
@@ -68,7 +83,7 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
         let card = paymentTextField.cardParams
-        getHeartlandToken(card)
+        getHeartlandToken(card: card)
     }
     
     

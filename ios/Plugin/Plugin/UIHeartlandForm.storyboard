@@ -41,17 +41,25 @@
                                     <action selector="payButtonTapped:" destination="Wa0-M8-VOa" eventType="touchUpInside" id="W68-BA-w4Q"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh6-u8-4zS">
+                                <rect key="frame" x="37" y="274" width="300" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DXm-P2-9Zx"/>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="jh6-u8-4zS" id="cwf-8Z-3nd"/>
                         <outlet property="payButton" destination="zaz-F8-mlA" id="aKM-69-UU7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2X-Ws-deX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-898" y="72"/>
+            <point key="canvasLocation" x="-898.39999999999998" y="71.514242878560722"/>
         </scene>
     </scenes>
 </document>
