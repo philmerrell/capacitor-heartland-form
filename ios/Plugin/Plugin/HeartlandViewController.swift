@@ -58,7 +58,7 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
         { (tokenData) in
             if tokenData?.message != nil {
                 // Display error message on view
-                messageLabel.text = tokenData.message
+                self.messageLabel.text = tokenData?.message
                 
             } else {
                 // We have a token
