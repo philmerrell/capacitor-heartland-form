@@ -39,19 +39,16 @@ public class HeartlandForm: CAPPlugin, PaymentTokenDelegate {
          } else {
              call.error("You must pass a Heartland public key")
              self.bridge.modulePrint(self, "A Heartland public key was not passed")
-            call.reject(error.localizedDescription, error, [
-                "item1": true
-            ])
+//            call.reject(error.localizedDescription, error, [
+//                "item1": true
+//            ])
             return
          }
     }
     
     func paymentTokenSuccess(_ result: TokenSuccess) {
         call.resolve([
-            "added": true,
-            "info": [
-                "id": id
-            ]
+            "added": true
         ])
     }
     
