@@ -20,7 +20,7 @@ protocol PaymentTokenDelegate {
 public class HeartlandForm: CAPPlugin, PaymentTokenDelegate {
     
     var call: CAPPluginCall!
-    let heartlandViewController: HeartlandViewController?
+    var heartlandViewController: HeartlandViewController?
 
     @objc func open(_ call: CAPPluginCall) {
         self.call = call;
@@ -41,8 +41,8 @@ public class HeartlandForm: CAPPlugin, PaymentTokenDelegate {
         let storyboard = UIStoryboard(name: "UIHeartlandForm", bundle: bundle)
         heartlandViewController = storyboard.instantiateViewController(withIdentifier: "HeartlandViewController") as! HeartlandViewController
         
-        controller.delegate = self
-        controller.publicKey = publicKey
+        heartlandViewController?.delegate = self
+        heartlandViewController?.publicKey = publicKey
         
         DispatchQueue.main.async {
             self.bridge.viewController.present(self.heartlandViewController!, animated: true, completion: nil)
