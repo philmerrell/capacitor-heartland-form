@@ -24,13 +24,13 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         createTextField()
+        setUIButtonAndLabelPositions()
         payButton.isEnabled = false
     }
     
     func createTextField() {
-        let frame1 = CGRect(x: 20, y: 150, width: self.view.frame.size.width - 40, height: 40)
+        let frame1 = CGRect(x: 20, y: 250, width: self.view.frame.size.width - 40, height: 40)
         paymentTextField = STPPaymentCardTextField(frame: frame1)
-        paymentTextField.center = view.center
         paymentTextField.postalCodeEntryEnabled = true;
         paymentTextField.delegate = self
         view.addSubview(paymentTextField)
@@ -72,6 +72,11 @@ class HeartlandViewController: UIViewController, STPPaymentCardTextFieldDelegate
         if paymentTextField.isValid {
             payButton.isEnabled = true
         }
+    }
+    
+    func setUIButtonAndLabelPositions() {
+        payButton.frame = CGRect(x: 20, y: 300, width: self.view.frame.size.width - 40, height: 50)
+        messageLabel.frame = CGRect(x: 20, y: 210, width: self.view.frame.size.width - 40, height: 40)
     }
     
 

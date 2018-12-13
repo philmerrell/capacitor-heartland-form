@@ -1,6 +1,6 @@
 {
   "name": "capacitor-heartland-form",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Capacitor plugin for accepting payment through Heartland SDK",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
