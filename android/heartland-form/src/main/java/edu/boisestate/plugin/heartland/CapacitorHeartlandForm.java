@@ -9,7 +9,7 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 
 @NativePlugin()
-public class HeartlandForm extends Plugin {
+public class CapacitorHeartlandForm extends Plugin {
 
     @PluginMethod()
     public void echo(PluginCall call) {
