@@ -21,10 +21,9 @@ public class HeartlandForm extends Plugin {
     }
 
     @PluginMethod()
-    public void call(PluginCall call) {
+    public void open(PluginCall call) {
         String publicKey = call.getString("heartlandPublicKey");
 
-        //            We have a key... open the view
         if (publicKey != null) {
             presentHeartlandFormView();
         } else {
