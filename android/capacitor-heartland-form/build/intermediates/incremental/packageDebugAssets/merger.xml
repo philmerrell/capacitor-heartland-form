@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/philmerrell/dev/heartland-form/android/heartland-form/src/main/assets"/><source path="/Users/philmerrell/dev/heartland-form/android/heartland-form/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/philmerrell/dev/heartland-form/android/heartland-form/src/debug/assets"/></dataSet></merger>
