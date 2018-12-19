@@ -12,15 +12,6 @@ import com.getcapacitor.PluginMethod;
 public class HeartlandForm extends Plugin {
 
     @PluginMethod()
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", value);
-        call.success(ret);
-    }
-
-    @PluginMethod()
     public void open(PluginCall call) {
         String publicKey = call.getString("heartlandPublicKey");
 
@@ -31,7 +22,7 @@ public class HeartlandForm extends Plugin {
         }
     }
 
-    public void presentHeartlandFormView() {
+    private void presentHeartlandFormView() {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         getActivity().startActivity(intent);
     }

@@ -43,8 +43,9 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'ionic-team:capacitor-android:1+'
+    implementation 'com.stripe:stripe-android:6.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1' 
 }
 
