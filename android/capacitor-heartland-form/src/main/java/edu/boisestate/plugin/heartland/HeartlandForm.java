@@ -8,6 +8,7 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 
+
 @NativePlugin()
 public class HeartlandForm extends Plugin {
 
@@ -16,14 +17,14 @@ public class HeartlandForm extends Plugin {
         String publicKey = call.getString("heartlandPublicKey");
 
         if (publicKey != null) {
-            presentHeartlandFormView();
+            // presentHeartlandFormView();
         } else {
             call.error("You must pass a Heartland public key");
         }
     }
 
-    private void presentHeartlandFormView() {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        getActivity().startActivity(intent);
-    }
+    // private void presentHeartlandFormView() {
+    //     Intent intent = new Intent(Intent.ACTION_VIEW);
+    //     getActivity().startActivity(intent);
+    // }
 }
