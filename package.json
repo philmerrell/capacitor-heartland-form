@@ -1,6 +1,6 @@
 {
   "name": "capacitor-heartland-form",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Capacitor plugin for accepting payment through Heartland SDK",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -13,7 +13,7 @@
   "author": "Phil Merrell",
   "license": "MIT",
   "dependencies": {
-    "@capacitor/core": "1.0.0-beta.13"
+    "@capacitor/core": "1.0.0-beta.17"
   },
   "devDependencies": {
     "typescript": "^2.6.2"
